@@ -1,0 +1,5 @@
+Checks: '*'
+CheckOptions:
+  - key:             some-check.option
+    value:           'value'
+HeaderFilterRegex:  '.*'
