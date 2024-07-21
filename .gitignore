@@ -10,7 +10,6 @@ build/
 
 
 # IDE and editor files
-.vscode/
 *.swp
 *.swo
 

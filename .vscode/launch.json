@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+      {
+          "name": "Debug",
+          "type": "cppdbg",
+          "request": "launch",
+          "program": "${workspaceFolder}/build/my_program",
+          "args": [],
+          "stopAtEntry": false,
+          "cwd": "${workspaceFolder}",
+          "environment": [],
+          "externalConsole": false,
+          "preLaunchTask": "Build", // Ensure this matches the label of your build task
+          "miDebuggerPath": "/usr/bin/gdb"
+      }
+  ]
+}

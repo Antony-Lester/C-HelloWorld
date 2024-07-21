@@ -18,7 +18,7 @@ all: $(TARGET)
 
 # Rule to link the program - depends on all object files
 $(TARGET): $(OBJ)
-    $(CC) -o $@ $^
+$(CC) -o $@ $^
 
 # Rule to compile source files into object files
 build/%.o: src/%.c
