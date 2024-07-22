@@ -1,8 +1,5 @@
 #include <stdio.h>
-
-void print_hello() {
-    printf("Hello, Embedded World!\n");
-}
+#include "stdout.h"
 
 int main() {
     print_hello();
