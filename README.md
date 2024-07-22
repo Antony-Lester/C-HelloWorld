@@ -45,10 +45,29 @@ gcc -o test_runner MyTestRunner.c MyTest.c unity/src/unity.c -Iunity/src
 for example
 
 ```bash
-gcc -o test_runner tests/test_runner_main.c tests/test_main.c unity/src/unity.c -Iunity/src
-./tests/test_runner
+gcc -o test_runner tests/test_runner_main.c tests/test_main.c src/stdout.c lib/test/Unity/src/unity.c -Ilib/test/Unity/src -Isrc/ -DRUN_TEST
+./test_runner
 ```
 
+
+### TODO: automate Compile & run to a bash script
+
+```bash
+#!/bin/bash
+
+# Compile the test runner and tests
+gcc -o test_runner tests/test_runner_main.c tests/test_main.c src/stdout.c lib/test/Unity/src/unity.c -Ilib/test/Unity/src -Isrc/ -DRUN_TEST
+
+# Check if compilation was successful
+if [ $? -eq 0 ]; then
+    echo "Compilation successful. Running tests..."
+    ./test_runner
+else
+    echo "Compilation failed."
+fi
+```
+
+...RETURN 0? IS POSITIVE TEST OUTCOME??
 
 
 ## Contributing
