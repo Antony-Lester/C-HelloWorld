@@ -1,74 +1,48 @@
-# Hello World
+# C Test Driven Development (Unity)
 
-Welcome to this GitHub repository! Here's a simple "Hello World" to get things started.
+## clone Unity
 
-## Introduction
-
-This README serves as a quick introduction to the repository. The purpose of this repository is to demonstrate a simple "Hello World" program in C.
-
-## Test Driven Development (Unity)
-
-### clone Unity
-
-(git clone) <https://github.com/ThrowTheSwitch/Unity.git>
+```Bash
+cd lib/test
+git clone https://github.com/ThrowTheSwitch/Unity.git
+cd ../..
+```
 
 ### install ruby programming langauge
 
  ```Bash
-  $sudo apt-get install ruby-full
+  sudo apt-get install ruby-full
  ```
 
 ### Write your Unity test file
 
-example at tests/test_main.c
+example at tests/test_pass.c
 
-### Run Generate Test Runner
+### Generate Test Runner
 
-```Ruby
-ruby path/to/unity/auto/generate_test_runner.rb MyTest.c MyTestRunner.c
+```Bash
+ruby lib/test/Unity/auto/generate_test_runner.rb tests/test_pass.c
 ```
 
-for example:
+### Compile
 
-```ruby
-ruby lib/test/Unity/auto/generate_test_runner.rb tests/test_main.c tests/test_runner_main.c
+```Bash
+gcc -o test_pass_runner tests/test_pass_Runner.c tests/test_pass.c lib/test/Unity/src/unity.c -Ilib/test/Unity/src -DRUN_TESTS
 ```
 
+### Run
 
-### Compile & Run
-
-```bash
-gcc -o test_runner MyTestRunner.c MyTest.c unity/src/unity.c -Iunity/src
-./test_runner
+```Bash
+./test_pass_runner
 ```
 
-for example
+### TODO log result
 
-```bash
-gcc -o test_runner tests/test_runner_main.c tests/test_main.c src/stdout.c lib/test/Unity/src/unity.c -Ilib/test/Unity/src -Isrc/ -DRUN_TEST
-./test_runner
-```
+### TODO Automate Test Runner, Compile, & Run (one test)
+delete files that are created after its run
 
-
-### TODO: automate Compile & run to a bash script
-
-```bash
-#!/bin/bash
-
-# Compile the test runner and tests
-gcc -o test_runner tests/test_runner_main.c tests/test_main.c src/stdout.c lib/test/Unity/src/unity.c -Ilib/test/Unity/src -Isrc/ -DRUN_TEST
-
-# Check if compilation was successful
-if [ $? -eq 0 ]; then
-    echo "Compilation successful. Running tests..."
-    ./test_runner
-else
-    echo "Compilation failed."
-fi
-```
-
-...RETURN 0? IS POSITIVE TEST OUTCOME??
-
+### TODO Automate Test Runner, Compile, & Run (mutiple tests)
+delete files that are created after its run
 
 ## Contributing
 

@@ -2,15 +2,11 @@
 
 /*=======Automagically Detected Files To Include=====*/
 #include "unity.h"
-#include "stdout.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
 
 /*=======External Functions This Runner Calls=====*/
 extern void setUp(void);
 extern void tearDown(void);
-extern void test_print_hello(void);
+extern void test_passing(void);
 
 
 /*=======Mock Management=====*/
@@ -71,8 +67,8 @@ static void run_test(UnityTestFunction func, const char* name, UNITY_LINE_TYPE l
 /*=======MAIN=====*/
 int main(void)
 {
-  UnityBegin("tests/test_main.c");
-  run_test(test_print_hello, "test_print_hello", 45);
+  UnityBegin("tests/test_pass.c");
+  run_test(test_passing, "test_passing", 11);
 
   return UNITY_END();
 }
